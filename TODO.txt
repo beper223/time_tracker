@@ -1,0 +1,2 @@
+заполнить класс WorkTimeController из файла src/api/controllers/work_time.py
+заполнить класс WorkTimeService из файла src/services/work_time.py
