@@ -11,3 +11,6 @@ class EntityNotFoundException(CustomBaseException):
 
 class DatabaseException(CustomBaseException):
     pass
+
+class TaskCreationException(CustomBaseException):
+    pass

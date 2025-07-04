@@ -1,13 +1,13 @@
 from typing import List, Dict, Any, Union
 
-from src.repositories.tasks import TasksRepository
+from src.repositories.task import TaskRepository
 
 from src.dto import (
-    TasksRequestDTO,
-    TasksResponseDTO
+    TaskRequestDTO,
+    TaskResponseDTO
 )
 
 class WorkTimeService:
 
     def __init__(self):
-        self.poll_repository = TasksRepository()
+        self.poll_repository = TaskRepository()

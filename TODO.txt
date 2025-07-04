@@ -1,2 +1,7 @@
 заполнить класс WorkTimeController из файла src/api/controllers/work_time.py
 заполнить класс WorkTimeService из файла src/services/work_time.py
+заполнить класс TaskRepository из файла src/repositories/task.py
+заполнить класс Task из файла src/models/task.py
+заполнить класс TaskRequestDTO и TaskResponseDTO из файла src/dto/task.py
+
+Вспомнить как проводить миграции, запускать сервер
