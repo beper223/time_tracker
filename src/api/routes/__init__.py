@@ -1,5 +1,4 @@
 from flask import Flask
-
 from src.api.routes.work_time import api_blueprint
 
 
