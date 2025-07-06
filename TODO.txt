@@ -1,7 +1,23 @@
 заполнить класс WorkTimeController из файла src/api/controllers/work_time.py
 заполнить класс WorkTimeService из файла src/services/work_time.py
 заполнить класс TaskRepository из файла src/repositories/task.py
-заполнить класс Task из файла src/models/task.py
++заполнить класс Task из файла src/models/task.py
+    - добавить признак is_closed
+    - добавить вид работ (putzen, verputzen)
+    - дата работы
+    - время начала, время окончания
 заполнить класс TaskRequestDTO и TaskResponseDTO из файла src/dto/task.py
 
 Вспомнить как проводить миграции, запускать сервер
+
+Идеи для интерфейса:
+- добавить авторизацию
+- в списке выполненных работ добавить кнопку "удалить"
+- добавить возможность закрытия (переданных на оплату) работ
+- добавить пагинацию
+- прикрутить график интенсивности по дням
+
+https://pypi.org/project/sqlacodegen/
+sqlacodegen2
+Underscore — это нижнее подчёркивание, символ _
+

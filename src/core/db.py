@@ -6,7 +6,6 @@ migrate = Migrate()
 
 def init_db(app):
     db.init_app(app)
-
     # from src.models import (
     #     User, Poll, PollOption, Vote,
     #     PollStatistics, OptionStatistics
