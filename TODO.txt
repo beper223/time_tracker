@@ -21,3 +21,9 @@ https://pypi.org/project/sqlacodegen/
 sqlacodegen2
 Underscore — это нижнее подчёркивание, символ _
 
+============ Alembic-миграция ============
+python manage.py db init
+отредактировать файл alembic.ini, раздел [alembic]
+python manage.py db migrate -m "adding category"
+python manage.py db upgrade
+

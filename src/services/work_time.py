@@ -10,4 +10,7 @@ from src.dto import (
 class WorkTimeService:
 
     def __init__(self):
-        self.poll_repository = TaskRepository()
+        self.task_repository = TaskRepository()
+
+    def get_work_times(self):
+        return self.task_repository.get_all()
