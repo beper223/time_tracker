@@ -17,6 +17,9 @@
 - добавить пагинацию
 - прикрутить график интенсивности по дням
 
+git remote add origin git@github.com:beper223/time_tracker.git
+git push -u origin main
+
 https://pypi.org/project/sqlacodegen/
 sqlacodegen2
 Underscore — это нижнее подчёркивание, символ _
@@ -26,4 +29,23 @@ python manage.py db init
 отредактировать файл alembic.ini, раздел [alembic]
 python manage.py db migrate -m "adding category"
 python manage.py db upgrade
+
+python manage.py db - perform database migrations.
+Commands:
+  branches        Show current branch points
+  check           Check if there are any new operations to migrate
+  current         Display the current revision for each database.
+  downgrade       Revert to a previous version
+  edit            Edit a revision file
+  heads           Show current available heads in the script directory
+  history         List changeset scripts in chronological order.
+  init            Creates a new migration repository.
+  list-templates  List available templates.
+  merge           Merge two revisions together, creating a new revision file
+  migrate         Autogenerate a new revision file (Alias for 'revision...
+  revision        Create a new revision file.
+  show            Show the revision denoted by the given symbol.
+  stamp           'stamp' the revision table with the given revision;...
+  upgrade         Upgrade to a later version
+
 
