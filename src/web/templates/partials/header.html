@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Task Tracker</a>
+    <div class="d-flex ms-auto">
+      {% if current_user.is_authenticated %}
+        <span class="navbar-text me-3">Привет, {{ current_user.username }}!</span>
+        <form action="{{ url_for('auth.logout') }}" method="post" class="d-inline">
+          {{ csrf_token() }}
+          <button class="btn btn-outline-danger btn-sm" type="submit">Выйти</button>
+        </form>
+      {% else %}
+        <a class="btn btn-outline-primary btn-sm me-2" href="{{ url_for('auth.login') }}">Войти</a>
+        <a class="btn btn-outline-success btn-sm" href="{{ url_for('auth.register') }}">Регистрация</a>
+      {% endif %}
+      <!-- Переключение языка -->
+      <form action="{{ url_for('set_language') }}" method="post" class="ms-3">
+        {{ csrf_token() }}
+        <select name="lang" onchange="this.form.submit()" class="form-select form-select-sm">
+          <option value="ru" {% if g.locale == 'ru' %}selected{% endif %}>Русский</option>
+          <option value="de" {% if g.locale == 'de' %}selected{% endif %}>Deutsch</option>
+        </select>
+      </form>
+    </div>
+  </div>
+</nav>

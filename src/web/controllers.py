@@ -19,6 +19,8 @@ class TaskController:
 
     def new_task(self):
         if request.method == 'POST':
+            data = request.get_data()
+
             task = Task(
                 description=request.form['description'],
                 task_type=TaskType[request.form['task_type']],

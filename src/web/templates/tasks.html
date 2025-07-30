@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Список задач{% endblock %}
+{% block content %}
+<h2>Список задач</h2>
+
+<form method="POST">
+  {{ form.csrf_token }}
+
+  <table class="table table-bordered table-sm">
+    <thead>
+      <tr>
+        <th>Описание</th>
+        <th>Дата</th>
+        <th>Начало</th>
+        <th>Конец</th>
+        <th>Тип</th>
+        <th>Закрыта</th>
+        <th>Удалить</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for task in tasks %}
+        <tr>
+          <td><input name="description_{{ task.id }}" class="form-control" value="{{ task.description }}"></td>
+          <td><input type="date" name="work_date_{{ task.id }}" class="form-control" value="{{ task.work_date }}"></td>
+          <td><input type="time" name="start_time_{{ task.id }}" class="form-control" value="{{ task.start_time }}"></td>
+          <td><input type="time" name="end_time_{{ task.id }}" class="form-control" value="{{ task.end_time }}"></td>
+          <td>
+            <select name="task_type_{{ task.id }}" class="form-select">
+              {% for key, label in task_type_choices %}
+                <option value="{{ key }}" {% if task.task_type.name == key %}selected{% endif %}>{{ label }}</option>
+              {% endfor %}
+            </select>
+          </td>
+          <td class="text-center">
+            <input type="checkbox" name="is_closed_{{ task.id }}" {% if task.is_closed %}checked{% endif %}>
+          </td>
+          <td>
+            <button name="delete" value="{{ task.id }}" class="btn btn-sm btn-danger">🗑</button>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <button name="action" value="update_all" class="btn btn-primary">Сохранить изменения</button>
+  <button name="action" value="add_new" class="btn btn-success">Добавить задачу</button>
+</form>
+{% endblock %}
